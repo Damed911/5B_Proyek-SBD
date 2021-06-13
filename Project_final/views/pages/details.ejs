@@ -1,0 +1,78 @@
+<%- include('_header') %>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<div class="container">
+	<!-- Top box -->
+		<!-- Logo & Site Name -->
+		<div class="placeholder">
+			<div class="parallax-window" data-parallax="scroll" data-image-src="images/sunshinebanner.jpg">
+				<div class="tm-header">
+					<div class="row tm-header-inner">
+						<div class="col-md-6 col-12">
+							<img src="img/simple-house-logo.png" alt="Logo" class="tm-site-logo" /> 
+							<div class="tm-site-text-box">
+								<h1 class="tm-site-title">MySunShines Store</h1>
+						
+							</div>
+						</div>
+	
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<main>
+			<header class="row tm-welcome-section">
+				<h2 class="col-12 text-center tm-section-title">MySunShines Store</h2>
+			</header>		
+
+			<!-- Gallery -->
+			<div class="row tm-gallery">
+				<!-- gallery page 1 -->
+				<div id="tm-gallery-page-pizza" class="tm-gallery-page">			
+						<figure>
+							<img src="/images/<%= model.gambar%>" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title"><%= model.nama_prod %></h4>
+								<p class="tm-gallery-description"><%= model.deskripsi%></p>
+								<p class="tm-gallery-price"><%= model.harga %></p>
+								<p class="tm-gallery-price">Jumlah Stok: <%= model.jumlah_stok %></p>
+							</figcaption>
+						</figure>
+				</div> <!-- gallery page 1 -->		
+			</div>
+            <form action="/produk/<%=model.id_p%>"method="POST" id="contactform" enctype="multipart/form-data">
+    
+                <div class="form-group">
+                    <label for="nama_acc">Nama akun</label>
+                    <input type="character varying" name="nama_acc" placeholder="Masukkan nama akun anda" class="form-control">
+                </div>
+    
+                <div class="form-group">
+                    <label for="jumlah">Jumlah Barang</label>
+                    <input type="text" name="jumlah" placeholder="Jumlah Barang" class="form-control">
+                </div>
+
+    
+                <div class="form-group">
+                    <label for="metode_transaksi">Metode Pembayaran</label>
+                    <input type="text" name="metode_transaksi" placeholder="Metode Pembayaran" class="form-control"/>
+                </div>
+                
+                <a href="/" class="btn btn-secondary">Cancel</a>
+
+                <div class="popup" onclick="myFunction()">     
+                    <span class="popuptext" id="myPopup"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Beli</button>
+            </form>
+		</main>
+
+        <script>
+            // When the user clicks on <div>, open the popup
+            function myFunction() {
+              var popup = document.getElementById("myPopup");
+              popup.classList.toggle("show");
+            }
+        </script>
+<%- include('_footer') %>

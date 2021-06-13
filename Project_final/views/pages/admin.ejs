@@ -1,0 +1,58 @@
+<%- include('_header') %>
+
+	<div class="container">
+	<!-- Top box -->
+		<!-- Logo & Site Name -->
+		<div class="placeholder">
+			<div class="parallax-window" data-parallax="scroll" data-image-src="images/sunshinebanner.jpg">
+				<div class="tm-header">
+					<div class="row tm-header-inner">
+						<div class="col-md-6 col-12">
+							<img src="img/simple-house-logo.png" alt="Logo" class="tm-site-logo" /> 
+							<div class="tm-site-text-box">
+								<h1 class="tm-site-title">MySunShines Store</h1>
+						
+							</div>
+						</div>
+	
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<main>
+			<header class="row tm-welcome-section">
+				<h2 class="col-12 text-center tm-section-title">MySunShines Store</h2>
+			</header>			
+
+			<!-- Gallery -->
+			<div class="row tm-gallery">
+				<!-- gallery page 1 -->
+				<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+					<% model.forEach (product => { %>
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="/images/<%= product.gambar%>" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title"><%= product.nama_prod %></h4>
+								<p class="tm-gallery-description"><%= product.deskripsi%></p>
+								<p class="tm-gallery-price"><%= product.harga %></p>
+							</figcaption>
+						</figure>
+
+                        
+                   
+                        <a href="edit/<%= product.id_p %>" class="tm-cmd-edit">Edit</a> 
+                        <form action="/delete/<%= product.id_p %>" method="POST" class="tm-cmd-delete2">
+                            <button type="submit" class="tm-cmd-delete">Delete</button>
+                        </form>
+					</article>
+					<% }) %>
+ 
+				</div> <!-- gallery page 1 -->		
+
+			</div>
+            <a href="create" class="tm-cmd-add">Add New Product</a> 
+		</main>
+
+<%- include('_footer') %>
