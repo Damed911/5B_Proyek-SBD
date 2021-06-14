@@ -1,12 +1,12 @@
 {
-  "name": "cdmaarena",
+  "name": "mysunshines",
   "version": "1.0.0",
   "description": "Proyek SBD",
   "main": "index.js",
   "scripts": {
     "devStart": "nodemon server.js"
   },
-  "author": "4B",
+  "author": "5B",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.6",
